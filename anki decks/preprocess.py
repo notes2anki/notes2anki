@@ -20,10 +20,11 @@ if output_file_path == '':
 with open(input_file_path, mode='r', newline='') as infile, \
         open(output_file_path, mode='w', newline='') as outfile:
     # Create reader and writer objects
-    reader = csv.reader(infile)
+    reader = csv.reader(infile, delimiter='\t')
     writer = csv.writer(outfile)
 
     # Iterate through the rows in the input file
     for row in reader:
         # Write only the first two columns to the output file
+        print(row)
         writer.writerow(row[:2])
