@@ -1,0 +1,1 @@
+`source openai-env/bin/activate`
