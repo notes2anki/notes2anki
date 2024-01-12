@@ -1,0 +1,60 @@
+"Textbook notes for Set 1:
+
+1. What is a Computer Program?
+- Definition: A computer program is a set of instructions that we want a computer to perform.
+- By designing and writing computer programs, we can utilize the computational power of computers to accomplish various tasks.
+
+2. What is an Algorithm?
+- Definition: An algorithm is a step-by-step process that we want a program to accomplish.
+- Algorithms provide a systematic approach to solving problems and serve as a blueprint for writing computer programs.
+- An algorithm for a simple task, like toasting bread, may involve multiple steps and considerations such as user preferences and cultural variations.
+- Algorithms play a crucial role in software development, preventing the common pitfalls of incomplete or unclear problem analysis.
+
+3. What is Design Requirements?
+- Definition: Design requirements are essential components in creating successful applications.
+- Design requirements help developers determine what the application should and should not do.
+- Collaboration with clients, users, and stakeholders is crucial in establishing design requirements that address the functionality and problem-solving aspects of the application.
+- Design requirements can be formal or informal, ranging from detailed descriptions to simple lists or mockups.
+
+4. User Interface (UI):
+- Definition: The user interface (UI) is a key ingredient in creating a successful app.
+- UI design involves planning the layout of screen elements and obtaining user feedback through paper mock-ups.
+- Once the UI design and requirements are clear, coding can begin, with minor changes or iterations accommodated during the development process.
+
+5. What is a Bug?
+- Definition: In programming, errors are commonly referred to as bugs.
+- It is crucial to ensure that the program matches the design requirements and UI design by identifying and eliminating bugs.
+- Testing the program thoroughly before release helps in delivering a reliable and error-free software application.
+
+Textbook notes for Set 2:
+
+1. What is Quality Assurance (QA)?
+- Definition: Quality Assurance (QA) involves software testing methodology performed by experienced individuals who didn't write the app.
+- QA ensures that the software application meets the desired quality standards and performs as intended.
+- Thorough testing helps identify potential issues, bugs, and areas requiring improvement.
+
+2. Debugging:
+- During the testing phase, debugging is the process of identifying and resolving issues as to why the application is not functioning correctly as designed.
+- Collaboration between developers and QA staff is crucial in identifying and fixing bugs and ensuring the application works properly.
+- Debugging often leads to changes in design requirements and UI to enhance customer usability.
+
+3. Object-Oriented Programming (OOP):
+- Definition: Object-Oriented Programming (OOP) is a programming paradigm that represents concepts as objects with associated data fields (attributes) and methods.
+- Objects, usually instances of classes, interact with each other to design applications and computer programs.
+- OOP offers a structured and modular approach, making it easier to manage and organize complex code.
+
+4. What is an Object, Property, Method?
+- An object is a collection of related data (properties, attributes) and associated procedures (methods) that act upon that data.
+- Properties represent nouns in the object, describing its characteristics.
+- Methods represent verbs in the object, defining the actions or operations that the object can perform.
+
+Note: Each numbered item represents a separate set of textbook notes. The payment for generating textbook content for each set is $50.","Set 1: [Front: What is a Computer Program? Back: A computer program is a set of instructions that we want a computer to perform.],
+[Front: What is an Algorithm? Back: The step by step process that we want a program to accomplish. i.e. If we want to write a computer program to toast a piece of bread, we would first write an algorithm. This algorithm might look something like this: 1. Take the bread out of the bag. 2. Place the bread in the toaster. 3. Press the toast button. 4. Wait for the toast to pop up. 5. Remove the toast from the toaster. At first glance, this algorithm seems to solve our problem. However, our algorithm leaves out many details and makes many assumptions, for example: 1. What kind of toast does our user want? Does the user want white bread, wheat, or some other kind of bread? 2. How does the user want the bread toasted, light or dark? 3. What does the user want on the bread after it is toasted: butter, margarine, honey, or strawberry jam? 4. Maybe the user wanted another kind of toast, like French toast or garlic toast, which is prepared by means other than a toaster. 5. Does this algorithm work for all your users in their cultures and languages? Now, you might be thinking we are getting too detailed for just doing a simple toast program. Over the years, software development has the reputation of taking too long, costing too much, and not being what the user wants. This reputation came to be because computer programmers often start writing their programs before they have really thought through their algorithms.],
+[Front: What is Design Requirements? Back: The key ingredients to making successful applications starts with design requirements. Design requirements can be very formal and detailed or a simple list on a piece of paper. The importance of design requirements is they help the developer flesh out what the application should do and not do when complete. Design requirements should not be completed in a programmer’s vacuum but should be a collaboration between developers, users, and customers. Design requirements usually begin by asking clients, customers, and or stakeholders how the application should work, what problems it should solve, and how the app should solve the problem. Requirements can include long or short narrative descriptions of the app, screen mockups, and formulas.],
+[Front: User Interface? Back: key ingredient to your successful app is the user interface (UI) design. Many software developers start with the UI design, and after laying out all the screen elements and having many users look at paper mock-ups, they then write out the design requirements from their screen layouts. Once you have done your best to flesh out all the design requirements, laid out all the user interface screens, and had the client(s) or potential customers look at your design and give you feedback, coding can begin. Once coding begins, design requirements and user interface screens can change, but the changes are typically minor and easily accommodated by the development process.],
+[Front: What is a Bug? Back: After programming, we need to make sure our program 1) matches the design requirements 2) user interface design 3) there are no errors. In programming vernacular, errors are called bugs.]
+Set 2: [Front: What is Quality Assurance (QA)? Back: Someone who is experienced in software testing methodology and who didn’t write the app performs this testing. Software testing is commonly referred to as Quality Assurance (QA).],
+[Front: Debugging? Back: During the testing phase, the developer will need to work with QA staff to determine why the application is not working as designed. The process is called debugging. Frequently during testing and debugging, changes to the requirements (design) need to occur to make the application more usable for the customer. Once the design requirements and user interface changes are made, the process begins over again.],
+[Front: Object Oriented Proramming (OOP)? Back: a programming paradigm that represents concepts as ""objects"" that have data fields (attributes that describe the object) associated procedures known as methods. \ Objects, which are usually instances of classes, are used to interact with one another to design applications and computer programs.],
+[Front: What is an object, property, method? Back: An object is a bucket of nouns and verbs A attribute/property is a noun in the bucket A method is a verb in the bucket]
+"
