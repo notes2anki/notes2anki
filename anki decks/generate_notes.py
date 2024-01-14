@@ -34,8 +34,7 @@ with open(input_file_path, mode = 'r', newline='') as infile, \
   while len(inputs) > 10 * NUM_DATASETS:
     requests = []
 
-    # j datasets per request
-    for j in range(NUM_DATASETS):
+    for j in range(NUM_DATASETS): # j datasets per request
         formattedSubdecks = []
         num = randint(1, 10) # each dataset contains {num} cards 
         subdeck = inputs[:num]
