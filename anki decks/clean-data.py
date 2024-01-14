@@ -24,8 +24,13 @@ with open(input_file_path, mode='r', newline='') as infile, \
     reader = csv.reader(infile, delimiter='\t')
     writer = csv.writer(outfile)
 
+    line = 0
+
     # Iterate through the rows in the input file
     for row in reader:
-        # Write only the first two columns to the output file
-        print(row)
-        writer.writerow(row[:2])
+      line += 1
+      if line == 2:
+        continue
+      # Write only the first two columns to the output file
+      print(row)
+      writer.writerow(row[:2])
