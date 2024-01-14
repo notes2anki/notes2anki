@@ -29,7 +29,7 @@ with open(input_file_path, mode='r', newline='') as infile, \
     # Iterate through the rows in the input file
     for row in reader:
       line += 1
-      if line == 2:
+      if line <= 2:
         continue
       # Write only the first two columns to the output file
       print(row)
