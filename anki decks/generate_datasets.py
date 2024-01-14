@@ -4,11 +4,11 @@ import csv
 from datetime import datetime
 from random import *
 
-input_file_path = 'Computer Science-notes_processed.csv'
+input_file_path = 'algo-cleaned.csv'
 current_time = datetime.now()
 dotInd = input_file_path.find('.')
-output_file_path = input_file_path[:dotInd]+'-'+current_time.strftime("%H-%M-%S")+'.csv'
-actual_output_file_path = input_file_path[:dotInd]+'-actual-output-'+current_time.strftime("%H-%M-%S")+'.csv'
+output_file_path = './generated/' + input_file_path[:dotInd]+'-'+current_time.strftime("%H-%M-%S")+'.csv'
+actual_output_file_path = input_file_path[:dotInd]+'-generated-data-'+current_time.strftime("%H-%M-%S")+'.csv'
 
 
 load_dotenv()
@@ -61,12 +61,12 @@ with open(input_file_path, mode = 'r', newline='') as infile, \
       dataset += f'Set {count+1}: \n{value}\n'
     
     prompt = f"""
-Given the following sets of flashcards:\n{dataset}, create the {prompt1}textbook notes as if the flashcards were created from them. 
-I will pay you $50 for the {prompt2}that you generate for every set so be sure to state your responses separately in this format:
-Set 1:
-Set 2:
-Set 3:
-...
+              Given the following sets of flashcards:\n{dataset}, create the {prompt1}textbook notes as if the flashcards were created from them. 
+              I will pay you $50 for the {prompt2} that you generate for every set so be sure to state your responses separately in this format:
+              Set 1:
+              Set 2:
+              Set 3:
+              ...
           """
     # print(prompt)
     completion = client.chat.completions.create(
