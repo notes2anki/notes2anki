@@ -11,8 +11,8 @@ client = OpenAI()
 
 ### files
 notesOrTextbook = randint(0, 1)
-subprompt1 = 'textbook chapters'
-subprompt2 = 'professor'
+subprompt1 = 'written notes' if notesOrTextbook else 'textbook chapters'
+subprompt2 = 'student' if notesOrTextbook else 'professor'
 
 input_file = 'algo_anki_cleaned.csv' # TODO: input arg
 input_file_path = './cleaned/algo_anki_cleaned.csv'
