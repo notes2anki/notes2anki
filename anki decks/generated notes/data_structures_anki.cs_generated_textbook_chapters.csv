@@ -1,0 +1,480 @@
+"Chapter 1: Introduction to Linear Search
+
+In this chapter, we will explore the concept of linear search, which is a basic search algorithm used to find an item in a list. Linear search is an efficient option for smaller data sets or when the data set is not sorted. We will discuss the overview of linear search, its applications, and the crucial requirement for its implementation.
+
+Chapter 2: Linear Search Pseudocode and Algorithm
+
+In this chapter, we will dive into the details of linear search pseudocode and algorithm. We will provide a step-by-step guide on how to implement this search algorithm. The pseudocode will outline the necessary variables, conditions, and loop iterations required for a successful linear search. We will also provide a version of the pseudocode without comments for a concise representation.
+
+Chapter 3: Linear Search Algorithm Musts and Limitations
+
+In this chapter, we will discuss the essential characteristics and limitations of the linear search algorithm. We will identify the key requirements that a linear search algorithm must fulfill, such as the ability to locate an item in the data set regardless of its order and the need to check each item sequentially. Furthermore, we will discuss the limitations of the coded linear search, specifically focusing on the inability to locate multiple occurrences of an item.","[Front: Linear Search overview Back: Finds an item in a(n) (un)sorted list. Starts at the first item and checks each item one by one. Doesn't required the data set to be in order Can be efficient for smaller data sets Inefficient for large data sets],
+[Front: Applications of linear search Back: Ideal for finding items in small data sets and searching unoredered data such as a settings file. Typical use of linear search would be a find and replace function in a word processor Easiest search algorithm to implement but usually most inefficient.],
+[Front: Linear search psuedocode Back: found  = False index = 0  # start by initialising variables with their starting state. # ""found"" Boolean value is used to indicate whether the item we are searching fro has been found or not - start with False. # ""index"" specifies current position in the data set, starting at 0, we will assume the data being searched is stored in array or list. While found == False and index < items.Length #We enter a While loop that will continue to execute while found is False and index is less than the lengh of the items list.            If items[index] == itemToFind then #Each time around the loop, the program checks to see if the current item is the one we are searching for.                found = True #if it is, then Found is set to true causing the exit of the loop at the start of next iteration            Else                index = index + 1 #if it isn't then increment index by 1, meaning next iteration of the loop, the program will be checking against the next location the data set.            End IF  End While],
+[Front: Linear search psuedocode without comments Back: found = False index = 0   While found == False and index < items.Length            If items[index] ==  itemToFind then                found = True            Else                index = index + 1            End If End While],
+[Front: Linear search algorithm must: Back: Be able to locate an item in a data set if it exists Be able to locate the item regardless of whether the data set is sorted or not. Run without crashing even if the item being searched for doesn't eexist in the data set. Check each item sequentially starting with the first item.]"
+"Chapter 1: Introduction to Binary Search
+
+In this chapter, we will introduce the concept of binary search, which is an efficient algorithm used to find an item in a sorted data set. We will discuss the advantages of binary search over linear search, emphasizing its efficiency when dealing with large data sets. This chapter will also outline the prerequisite for implementing binary search, namely the need for the data set to be sorted beforehand.
+
+Chapter 2: Binary Search Pseudocode and Algorithm
+
+This chapter will provide a comprehensive guide to implementing binary search. We will present the pseudocode, which encompasses the necessary variables, loop conditions, and calculations required in each iteration. The step-by-step explanation of the algorithm will highlight how binary search divides the data set in half and narrows down the search range until the desired item is found.
+
+Chapter 3: Applications of Binary Search
+
+In this chapter, we will explore various applications of binary search. We will discuss scenarios where binary search is ideal, such as searching for an item in a large sorted data set, such as an online dictionary. We will emphasize the advantages offered by binary search in these specific scenarios, such as its ability to discard half of the data set after each iteration, leading to efficient search operations.","[Front: Limitations of coded linear search: Back: Version exits as soon as the first occurence of the item is found What if you wanted to find the first, last or all occurences?],
+[Front: Binary search overview Back: Efficient algorithm for finding an item in a sorted data set. More efficient than linear search. Starts at the middle of the list and repeatedly divides the list in half Requires the data set to be sorted first e.g. numerical or alphabetical order Efficient for large data sets],
+[Front: Applications of binary search Back: Ideal when you need to search for an item in a large sorted data set e.g.  online dictionary where words are sorted in alphabetical orderAs it discards half of the data after each iteration, it quickly reduces the very large data sets containing millions of records to one much more manageable.],
+[Front: Psuedocode binary search Back: found = False first  =  0 last = items.length - 1 #found is used to indicate whether the item we are searching for has been found or not- seting it to false #first/last: with each iteration, we need to know the curretn index of the first and last item in data set so we can find the mid point. MP changes with each iteration. To start with, we will be searching the entire data set, so set ""first"" to index 0 and ""last"" to length of data set - 1 which will be the index of the last item.  While first <= last and found == False #Enter a while loop that continue to iterate providing both first <= last and found == False. Loop will iterate until item is found or entire data set has been searched.       midpoint = (first + last) DIV 2 #Calculate the MP of data set. Add index values in ""first"" and ""last"" and do floor division to get an integer.       IF items[midpoint] == itemToFind then #Each iteration, program checks if the item at the MP of the data set is the one we are searching for.           found = True #if it is, ""found"" is set to True and loop will exit at the start of the nnext iteration       Else           If items[midpoint] < itemToFind then #if not then program will check if the MP is less than or greater than the desired item, allowing us to discard half the entire data set. We can do this becuase items in the data set of a binary search are stored in order.              first = midpoint + 1 #if item at MP is less than the desired value, we adjust ""first"" to point at the index value in MP + 1           Else               last = midpoint = 1 #if item at MP is more than the desired value, we adjust ""last"" to point at the index value in MP - 1 #Repeat while loop until we find desired item or prove that item is not in data set.           End If        End If End While],
+[Front: Binary seach psuedocode without comments Back: found = False first = 0 last = items.Length -1  WHILE first <= last and found == False         midpoint = (first+last) DIV 2         IF items[midpoint] == itemToFind then             Found = True         Else           IF items[midpoint] < itemToFind then               first = midpoint + 1           Else                last = midpoint - 1           End IF         End If End While]"
+"Chapter 1: Introduction to Bubble Sort
+
+This chapter will introduce the concept of bubble sort, which is a sorting algorithm used to sort unordered lists of items. We will explore the logic behind bubble sort, where it compares adjacent elements and swaps them if they are in the wrong order. The chapter will also explain how bubble sort gradually moves the largest or smallest items to the end of the list, ensuring the correct placement of elements.
+
+Chapter 2: Bubble Sort Pseudocode and Algorithm
+
+In this chapter, we will provide a detailed guide to implementing bubble sort. We will present the pseudocode for bubble sort, illustrating the necessary steps and conditions for the algorithm to work correctly. The algorithm will be explained in detail, showcasing how bubble sort iterates over the list and performs swaps until the entire list is sorted.
+
+Chapter 3: Bubble Sort Optimization Techniques and Efficiency
+
+In this chapter, we will explore optimization techniques for bubble sort to improve its efficiency. We will discuss variations of bubble sort, such as the flag-based optimization that stops the algorithm early if no swaps are made. Additionally, we will analyze the time complexity and discuss the strengths and weaknesses of bubble sort as a sorting algorithm",[Front: Bubble sort overview: Back: Sorts an unordered list of items by comparing each item with the  next one and swapping the items if it is greater than it. Algorithm is finished when no more swaps can be made. It bubbles the largest or smallest up to the end of the list. Last element will be in correct place after first pass.]
+"Chapter 1: Bubble Sort
+1.1 Introduction
+Bubble sort is a sorting algorithm that is often used for small data sets or situations where a simple and easy to implement sorting algorithm is required. Despite its simplicity, it is the most inefficient sorting algorithm and should not be used for larger data sets.
+
+1.2 Pseudocode
+The pseudocode for bubble sort involves using two nested loops to compare and swap adjacent elements until the entire data set is sorted. The outer loop iterates through the data set multiple times, while the inner loop compares and swaps adjacent elements if necessary.
+
+1.3 Steps of Bubble Sort
+- Start with the length of the data set and a flag indicating whether a swap has occurred.
+- Repeat the following steps until the entire data set is sorted: 
+  - Set the flag indicating a swap has occurred to false.
+  - Iterate through the data set and compare each element with its adjacent element. If an element is greater than its adjacent element, swap them and set the flag indicating a swap has occurred to true.
+- Decrement the length of the data set by 1 to ignore the already sorted elements.
+- Repeat the above steps until no swaps occur, indicating that the data set is sorted.
+
+1.4 Analysis
+Bubble sort has a time complexity of O(n^2) in the worst and average case, and O(n) in the best case when the data set is already sorted. It has a space complexity of O(1) since it only requires a few variables to perform the swaps.
+
+Chapter 2: Bubble Sort Implementation
+2.1 Implementation in a Programming Language
+Bubble sort can be easily implemented in any programming language using the provided pseudocode. It only requires simple loops and conditional statements.
+
+2.2 Example Code
+Here is an example code snippet in Python that implements bubble sort:
+
+```python
+def bubbleSort(items):
+    n = len(items)
+    swapped = True
+    
+    while n > 0 and swapped:
+        swapped = False
+        for index in range(n - 1):
+            if items[index] > items[index + 1]:
+                items[index], items[index + 1] = items[index + 1], items[index]
+                swapped = True
+        n -= 1
+
+# Example usage
+data = [5, 2, 9, 1, 7]
+bubbleSort(data)
+print(data)  # Output: [1, 2, 5, 7, 9]
+```
+
+Chapter 3: Advantages and Disadvantages of Bubble Sort
+3.1 Advantages
+- Easy to understand and implement.
+- Suitable for very small data sets or situations where simplicity outweighs efficiency.
+- No additional memory is required apart from the original data set.
+
+3.2 Disadvantages
+- Extremely inefficient for larger data sets.
+- Time complexity is O(n^2), making it impractical for large-scale sorting.
+- Not suitable for already partially sorted data sets.","[Front: Applications of bubble sort Back: Most inefficient sorting algorithm Easy to implement Popular choice for very small data sets Ideal for situations where a simple easy to program sorting  algorithm is required.],
+[Front: Bubble sort psuedocode Back: n = items.length swapped  = True # ""n"" used to track how far through the data set we need to check for items to swap on each iteration. start by setting it to then length of the data set.  #""swapped"" used to indicate whether a swap has taken place each iteration of the inner for loop. start by setting it to true so we will enter the main WHILE loop at least once to check for unsorted items. WHILE n > 0 AND swapped == True #enter a while loop which will iterate while n>0 and swapped == True. Loop will iterate until all items are sorted           swapped = False #each iteration the while loop assumes there are no items that need to be swapped until we prove otherwisw, so we set ""swapped"" to false.           n = n -1 #ensures that the length of the list is inline with 0 indexing. Ensures that the entire data set will be checked the first iterations for items to swap. This value will decrement by 1 each iteration of the outer WHILE loop. Sorted items will gradually, bubble up to the end of the data set so there will be fewer items to check through each iteration.           For index = 0 To n-1 #nested inner for loop. for each pass through the data set, respresented by the while loop, we need to start through the beginning and work through to the penultimate item of the unsorted data set, represented by n - 1. Need to work through the current subset of items that still need to be check.                If items[index] > items[index+1] then #if we find that the item at the current location in the data set is greater than the next item, we know it is out of order                    Swap(items[index] , items [index+1])                    swapped = True #we then swap the 2 items, then set ""swapped"" to true so that when we next check the outer while loop, we know we are still in the process of sorting the data out.                  End IF            End For #continue through the data set moving the item up as far as it needs to go until it is in the correct place. End WHILE #process is repeated as many times necessary until we discover the entire data set has been sorted.],
+[Front: bubble sort pseudocode without comments Back: n = items.Length swapped = True  While n > 0 AND swapped == True           swapped = False           n = n -1           For index = 0 TO n-1                  If items[index] > items[index+1] then                     Swap(items[index] , items[index+1])                     swapped = True                 End if           End For End While]"
+"Chapter 1: Insertion Sort
+1.1 Introduction
+Insertion sort is a simple and efficient sorting algorithm that iteratively inserts each element into its correct position in a data set. It is particularly useful for small data sets or situations where new elements are frequently added to an already sorted list.
+
+1.2 Pseudocode
+The pseudocode for insertion sort involves using a loop to iterate through the data set and comparing each element with elements before it. If the element is smaller, it is shifted to the right until the correct position is found.
+
+1.3 Steps of Insertion Sort
+- Iterate through the data set starting from the second element.
+- Take a copy of the current element and store it in a temporary variable.
+- Compare the current element with elements before it, moving larger elements to the right to create a space for insertion.
+- Insert the copied element into the correct position in the sorted part of the data set.
+- Repeat the above steps for all elements in the data set.
+
+1.4 Analysis
+Insertion sort has a time complexity of O(n^2) in the worst and average case, and O(n) in the best case when the data set is already sorted. It has a space complexity of O(1) since it only requires a few variables to perform the insertion.
+
+Chapter 2: Insertion Sort Implementation
+2.1 Implementation in a Programming Language
+Insertion sort can be easily implemented in any programming language using the provided pseudocode. It requires simple loops and conditional statements for comparisons and shifting elements.
+
+2.2 Example Code
+Here is an example code snippet in Python that implements insertion sort:
+
+```python
+def insertionSort(items):
+    for index in range(1, len(items)):
+        current = items[index]
+        index2 = index
+        
+        while index2 > 0 and items[index2 - 1] > current:
+            items[index2] = items[index2 - 1]
+            index2 -= 1
+        
+        items[index2] = current
+
+# Example usage
+data = [5, 2, 9, 1, 7]
+insertionSort(data)
+print(data)  # Output: [1, 2, 5, 7, 9]
+```
+
+Chapter 3: Advantages and Disadvantages of Insertion Sort
+3.1 Advantages
+- Simple and easy to understand and implement.
+- Efficient for small data sets or situations where new elements are frequently added to a sorted list.
+- In the best case scenario, when the data set is already sorted, insertion sort has a time complexity of O(n), making it faster than other comparison-based sorting algorithms.
+
+3.2 Disadvantages
+- Inefficient for larger data sets, especially when the data set is poorly sorted.
+- Requires shifting elements to create space for insertion, which can be time-consuming.
+- Not suitable for handling large-scale sorting.","[Front: Insertion sort overview: Back: Inserts each item into its correct position in a data set one at a  time. Useful for small data sets. Partically useful for inserting items into a ready sorted list Inefficient for larger data sets.],
+[Front: Insertion sort psuedocode Back: For index = 1 TO items.Length: #algorithm sets a for loop to iterate through the data set #it compares the item in items[1] with item immediately before it, at items[0]. This is why the for loop starts at 1 not 0, if we started at 0, we would be trying to compare the very first item in the data set with one at position items [-1] which would cause an out of bounds error.        current = items[index] #first thing we do each iteration is take a copy of item we are sorting and place it in temporary ""current"". We do this because if we  find items before it are wrong order, we will need to move them  up in the data set. In doing this we would override the original  term and we need a way of getting back to insert it into its current location.        index2 = index #set index2 to be same value as index 1. index2 used to track where we need to exit inner While loop. Every iteration of outer FOR loop, we need to check the current item against items before it. As we iterate through the data set, this number increases.          While index2 > 0 AND items[index2-1] > current #inner while loop is executed if any additional items before the one one we are comparing that still needs to be checked with index2 > 0 AND we check if that the item is greater than the one we are comparing, if it is, then we know the items are out of place.                items[index2] = items[index2 - 1]                index2 = index2 - 1 #Here we move the item up by 1 space and decrement index2 by 1. Then we check again to see if the item is in the correct place. If still not in the correct place, we repeat the while loop, moving all the items before the one we are comparing up one place till we discover the correct location.        End While #drop out of the while loop.          items[index2] = current #take a copy of the item we are comparing held in current, place the copy in its correct location. #outer for loop now increments and the whole process repeats. This time we are trying to locate the correct position of the next item.  End for],
+[Front: insertion sort pseudocode without comments Back: For index = 1 TO items.Length :       current = items[index]        index2 = index         While index2 > 0 AND items[index2 - 1] > current              items[index2] = items[index2 -1]              index2 = index2 - 1        End While           items[index2] = current End For],
+[Front: Inefficienies of insertion sort Back: Having to move all the items in the data structure so we can insert the ""current"" item into its new location - only to find that we need to repeat the process again and again. Gets worse with larger data sets and if data is poorly sorted already when inserting.  Could have used a linked list which would negate the need to move items within the data structure. Instead we would need to update various pointers linking nodes together to reflect new structure  each iteration.],
+[Front: Stacks Back: Items are pushed onto the top of the stack when added Popped off the top when deleting Peek  = look at top without deleting Last in First out Structure Last pushed on must be first popped off stack pointer always points to the node on the top any attempt to push an item onto a full stack is called a stack  overflow any attempt to pop an item of an empty stack is called stack  undeflow Often implemented using an array can also be created using OOP.],
+[Front: Queue Back: Linear data structure Enqueued at the back Dequeued from the from can peek at the fron without deleting it priority queue -  certain items can join the front of the queue First in First out structure back/tail pointer always points to the last item in the queue front/head pointer - points to the first attempts to enqueue items to a full queue is queue overflow dequeue an empty queue is queue underflow Can be implemented using an array or OOP.]"
+"Chapter 1: Stacks
+1.1 Introduction
+A stack is a data structure that follows the Last In First Out (LIFO) principle. Items are pushed onto the top of the stack when added and popped off the top when deleted. Stacks are commonly used in various applications, such as expression evaluation, backtracking, and recursion.
+
+1.2 Implementation using a Static Array
+To implement a stack using a static array, the following steps are typically performed:
+1. Check if the stack is full. If the top of the stack (index of the last item) is equal to the maximum capacity minus one, the stack is considered full.
+2. Increment the stack pointer and insert the new data item at the location pointed to by the stack pointer.
+3. To push an item onto the stack, call the isFull function to check if the stack is full. If it is not, increment the stack pointer and insert the new data item at the location pointed to by the stack pointer.
+
+1.3 Implementation using OOP and a Linked List
+In object-oriented programming (OOP), stacks can also be implemented using a linked list. Each node in the linked list represents an item in the stack. The top of the stack points to the node at the top.
+
+Chapter 2: Implementation of Push Operation
+2.1 Static Array Implementation
+To implement the push operation in a stack using a static array, the following steps are typically performed:
+1. Check if the stack is full by comparing the top index with the maximum size minus one. If they are equal, print an error message indicating that the stack is full.
+2. Increment the top index.
+3. Insert the new data item at the location pointed to by the top index.
+
+2.2 OOP and Linked List Implementation
+To implement the push operation in a stack using OOP and a linked list, the following steps are typically performed:
+1. Create a new node with the given data item.
+2. If the top of the stack is not null, set the next pointer of the new node to the current top.
+3. Set the top of the stack to the new node.
+
+Chapter 3: Advantages and Disadvantages of Stacks
+3.1 Advantages
+- Simple and efficient operations: push, pop, and peek can be performed in constant time.
+- Useful for managing recursive call information, backtracking, and undo-redo operations.
+- Can be implemented using a static array or in an object-oriented manner using a linked list.
+
+3.2 Disadvantages
+- Limited in capacity by the maximum size of the array or available memory for linked lists.
+- Lacks direct access to items in the middle of the stack.
+- Can lead to stack overflow if the maximum capacity is exceeded or stack underflow if trying to pop an item from an empty stack","[Front: Implementation of pushing onto a stack using a static array Back: 1. check the stack and output and error if its ful 2. increment the stack pointer insert the new data item at the location pointed to by the stack  pointer  function isFull(top)     if top == maxSize - 1 then           return true     else          return false     end if end function  procedure push(stack, top, data)          if isFull(top) == True then             print(""stack is full"")          else              top = top + 1              stack[top] = data           end if           return top end procedure],
+[Front: Implementation of pushing onto a stack using OOP and a linked list Back: class Node        private data        private next         public proecdure new(newItem)           data  = newItem           next = Null        end procedure         public function getData()           return data        end procedure              public function getNext()           return next        end procedure         public procedure setNext(newNext)              next = newNext        endprocedure  public procedure push (data)          newNode = Node(data)           if top != Null then               newNode.setNext(top)           end if           top = newNode end proecedure  end class  class Stack        private top         public procedure new()                  top = Null        end procedure  end class]"
+"Chapter title: Algorithm Efficiency Measurements
+
+Chapter content:
+In the field of computer science, it is crucial to analyze the efficiency of algorithms. Two key measurements, time complexity and space complexity, are used to evaluate algorithm performance.
+
+Time complexity refers to the amount of time an algorithm requires to solve a problem. It is often expressed using Big O notation, which provides an upper bound on the growth rate of the algorithm's execution time as the input size increases. Different algorithms may have different time complexities, with some being more efficient than others.
+
+Space complexity, on the other hand, relates to the amount of resources (such as memory) an algorithm needs to execute. It is also commonly expressed using Big O notation, representing the upper bound on the amount of space required by the algorithm as the input size increases.
+
+Understanding these measurements is essential for designing and analyzing algorithms. By analyzing the time and space complexity of different algorithms, developers can make informed decisions about which algorithm is the most suitable for their specific needs.",[Front: Measurements of algorithm efficiency Back: Time complexity - how much time they need to solve a problem Space complexity - Amound of resources they require]
+"Chapter title: Comparing Linear Search and Binary Search
+
+Chapter content:
+When searching for elements in a large data set, two popular algorithms that can be employed are linear search and binary search. Let's explore the characteristics and differences between these two search algorithms.
+
+Linear Search:
+- Items do not need to be stored in order for the algorithm to work.
+- The search process starts at the first item in the data set and sequentially checks each item until the desired element is found or there are no more items to check.
+- Linear search is suitable for small data sets.
+
+Binary Search:
+- Items must be in order (e.g., sorted) for the algorithm to work effectively.
+- The search process starts at the middle item in the data set and compares the target element with the middle element. Based on this comparison, the search space is halved, and the process is repeated until the desired element is found or there are no more items to check.
+- Binary search reduces the data set by half after each comparison, making it suitable for large data sets.
+- Binary search can be implemented using an array or a binary tree, providing flexibility based on specific requirements.
+- The addition of new items to the data set must be done in the correct place to maintain the order of items, which can impact the algorithm's efficiency.
+
+Understanding the differences between linear search and binary search is essential for selecting the most suitable algorithm for a given situation.
+
+Merge Sort:
+Chapter title: Introduction to Merge Sort
+
+Chapter content:
+Merge sort is an efficient sorting algorithm based on the concept of divide and conquer. This algorithm follows a straightforward process to sort a given set of data in a short amount of time.
+
+The fundamental principle of divide and conquer involves breaking down a larger problem into smaller, identical subproblems. Each of these subproblems is then solved independently, and their solutions are combined to solve the overall problem.
+
+Here are the steps involved in the merge sort algorithm:
+
+1. Divide the unsorted list into n sublists, each containing a single element.
+2. Repeatedly merge the sublists to produce new sorted sublists until there is only one sublist remaining, which will be the sorted list.
+
+Merge sort works effectively with any data set, but it particularly excels when dealing with large data sets where memory consumption is not a concern. Its ability to minimize the time required to perform the sort makes it ideal for parallel processing environments. The divide and conquer approach is leveraged to efficiently utilize multiple processing resources.
+
+Understanding the steps and applications of merge sort is essential for developers seeking efficient sorting techniques for various scenarios.
+
+The explanation for additional flashcards from set 3 is incomplete. Can you provide the remaining flashcards so that I can generate the textbook chapter for them as well","[Front: Comparing linear and binary search on a large data set. Back: Linear Binary                 Items do not need to be stored in order Items must be in order for the algorithm to work Start at the first item start at the middle item Search each item in sequence until each item is found or there are no items to  check halves the set of items to search after each comparison until the item is found or there are no more items to check - Divide and Conquer reduces data set by half each iteration. Can be implemented using an array or linked list Can be implemented using an array or binary tree new items are added at the end - quick New items must be added in the correct place to maintain the order of items - can be slow suitable for small number of items Suitable for a large number of items],
+[Front: Merge Sort overview Back: Can sort a data set extremely quickly using divide and conquerPrinciple of divide and conquer is to create 2 or more identical subproblems from the larger problem, solve them individually and combine their solutions to solve the overaching problem.Divide the unsorted list into n sublists, each containing one element.Repeatedly merge sublists, to produce new sorted sublists until there is only sublist remaining, being the sortest list.],
+[Front: Applications of merge sort Back: Suitable fot any data sets but works best with large ones where memory is not a concern However, the time take to perform the sort should be minimised. Ideal for parallel processing environments where the concept of divide and conquer can be used.]"
+":
+Chapter title: Algorithm Efficiency Measurements
+
+Chapter content:
+In the field of computer science, it is crucial to analyze the efficiency of algorithms. Two key measurements, time complexity and space complexity, are used to evaluate algorithm performance.
+
+Time complexity refers to the amount of time an algorithm requires to solve a problem. It is often expressed using Big O notation, which provides an upper bound on the growth rate of the algorithm's execution time as the input size increases. Different algorithms may have different time complexities, with some being more efficient than others.
+
+Space complexity, on the other hand, relates to the amount of resources (such as memory) an algorithm needs to execute. It is also commonly expressed using Big O notation, representing the upper bound on the amount of space required by the algorithm as the input size increases.
+
+Understanding these measurements is essential for designing and analyzing algorithms. By analyzing the time and space complexity of different algorithms, developers can make informed decisions about which algorithm is the most suitable for their specific needs.
+
+Set 2:
+Chapter title: Comparing Linear Search and Binary Search
+
+Chapter content:
+When searching for elements in a large data set, two popular algorithms that can be employed are linear search and binary search. Let's explore the characteristics and differences between these two search algorithms.
+
+Linear Search:
+- Items do not need to be stored in order for the algorithm to work.
+- The search process starts at the first item in the data set and sequentially checks each item until the desired element is found or there are no more items to check.
+- Linear search is suitable for small data sets.
+
+Binary Search:
+- Items must be in order (e.g., sorted) for the algorithm to work effectively.
+- The search process starts at the middle item in the data set and compares the target element with the middle element. Based on this comparison, the search space is halved, and the process is repeated until the desired element is found or there are no more items to check.
+- Binary search reduces the data set by half after each comparison, making it suitable for large data sets.
+- Binary search can be implemented using an array or a binary tree, providing flexibility based on specific requirements.
+- The addition of new items to the data set must be done in the correct place to maintain the order of items, which can impact the algorithm's efficiency.
+
+Understanding the differences between linear search and binary search is essential for selecting the most suitable algorithm for a given situation.
+
+Merge Sort:
+Chapter title: Introduction to Merge Sort
+
+Chapter content:
+Merge sort is an efficient sorting algorithm based on the concept of divide and conquer. This algorithm follows a straightforward process to sort a given set of data in a short amount of time.
+
+The fundamental principle of divide and conquer involves breaking down a larger problem into smaller, identical subproblems. Each of these subproblems is then solved independently, and their solutions are combined to solve the overall problem.
+
+Here are the steps involved in the merge sort algorithm:
+
+1. Divide the unsorted list into n sublists, each containing a single element.
+2. Repeatedly merge the sublists to produce new sorted sublists until there is only one sublist remaining, which will be the sorted list.
+
+Merge sort works effectively with any data set, but it particularly excels when dealing with large data sets where memory consumption is not a concern. Its ability to minimize the time required to perform the sort makes it ideal for parallel processing environments. The divide and conquer approach is leveraged to efficiently utilize multiple processing resources.
+
+Understanding the steps and applications of merge sort is essential for developers seeking efficient sorting techniques for various scenarios.
+
+The explanation for additional flashcards from set 3 is incomplete. Can you provide the remaining flashcards so that I can generate the textbook chapter for them as well","[Front: Merge sort steps Back: Repeatedly divide the list in half until each item is in its own list Take 2 adjacent lists and start with the first item in each one Compare the 2 items Insert the lowest items into a new list. Move to the next item in the list it was taken from Repeat steps 3 and 4 until all the items from one of the lists are in the new list Append all the items from the list that still contains items to the new list Replace 2 adjacent lists with the new listRepeated from step 2 until all adjacent lists have been compared Repeat from step 2 until only one list remains Steps 3 to 6 take place inside the merge function],
+[Front: Merge sort psuedocode step 1: Repeatedly divide the list in half until each item is its own list. Back: #main algorithm starts here items = [""Florida"" ,""Georgia"",""Delaware"",""Alabama""] listOfItems = [] item = [] #every item is put into its own list with a containter list  for n = 0 TO items.length - 1       item = items[n]       listOfItems.append(item)  #listOfItems contains a set of lists that all contain a single item],
+[Front: Merge sort psuedocode step 2: Take 2 adjacent lists and start with the first item in each one Back: #Repeat while there is more than one list While listOfItems.Length != 1           index = 0           #Merge pairs of lists           While index < listofItems.Length - 1               newList = merge(listOfItems[index], listOfItems[index+1])  #function to merge 2 lists into a new list Function merge(list1, list2)          newList = []          index1 = 0          index2 = 0],
+[Front: Merge sort psuedocode step 3: Compare the 2 items and step 4: insert the lowest item into a new list, move from the next item in the list it was take from. Step 5: Repeat steps 3 and 4 until all the itmes from one of the lsits are in the new list. Back: #Check each item in each list, and add the smallest item to a new list  While index1 < list.Length and index2 < list2.Length          If list1[index1] > list2[index2] Then             newList.append( list2[index2])             index2 = index2 + 1          Else if list1[index1] < list2[index2] Then             newList.append(list1[index1])             index1 = index1 + 1           Else if list1[index1] == list2[index2] Then             newList.append( list2[index2])             index2 = index2 + 1             newList.append(list1[index1])             index1 = index1 + 1           End if End While #the process needs to be repeated until all the items from one of the lists have been put into the ""newList""],
+[Front: Merge sort step 6: Append all of the items from the list that still contains items to the newList Back: #add left over items from the remaining list If index1 < list.Length Then     For item = index1 to list1.Length            newList.append(list1[item])     Next item Else if index2 < list2.Length Then     For item = index2 to list2.Length           newList.append (list2[item)     Next Item End if Return newList  #main program newList = merge(listOfItems[index], listOfItems[index+1]],
+[Front: merge sort Step 7: replace 2 adjacent lists with the new list step 8: repeat from step 2 until all adjacent lists have been compared. 9: Repeat from step 2 until only one list remains. Back: #repeat while there is more than one list While listOfItems.Length != 1        index = 0        #Merge pairs of lists        While index < 1 list of items.Length - 1                 newList = merge(listOfItems[index], listofItems[index+1])                 listofItems[index] = newList                 #once merged, delete one of the now redunant lists                 del listOfItems[index+1]                  index = index + 1         End while End while],
+[Front: Linear search psuedocode from textbook Back: ],
+[Front: Applications of insertion sort Back: Useful for small data sets Particularly useful for insterting items into a ready sorted list.]"
+"Chapter 1: Merge Sort
+1.1 Introduction to Merge Sort Process
+   - This section will provide a graphical representation of the merge sort process, illustrating how the algorithm divides and merges the data set.
+1.2 Merge Sort Pseudocode
+   - This section will present the textbook pseudocode for the merge sort algorithm, explaining the step-by-step procedure involved in sorting the data set.
+   
+Chapter 2: Quick Sort
+2.1 Overview of Quick Sort
+   - This section will introduce the quick sort algorithm, explaining its efficiency in ordering a data set quickly using the divide and conquer strategy. It will also highlight the use of a pivot value for comparisons.
+2.2 Applications of Quick Sort
+   - In this section, we will explore the various applications of quick sort, emphasizing its suitability for larger data sets and its adoption in medical monitoring, life support systems, aircraft controls, and defense systems.","[Front: Merge sort process graphically Back: ],
+[Front: Merge sort textbook psuedocode Back: ],
+[Front: Quick sort overview Back: Orders a data set extremely quickly using divide and conquer Uses a pivot value from the data set which other items are compared against to determine their position. Typically requires less memory than merge sort.],
+[Front: Applications of quick sort Back: Suitable for any data set but more for larger data sets. Ideal for parallel processing environments where divide and conquer can be used. Used in: Medical monitoringLife support systemsAircraft controlsDefence systems]"
+"Chapter 3: Quick Sort Steps
+3.1 Selection of Pivot Value
+   - This section will discuss the process of selecting a pivot value in quick sort and its significance in subsequent comparisons.
+3.2 Step-by-Step Procedure of Quick Sort
+   - Here, we will present the detailed steps involved in the quick sort algorithm, covering the concept of left and right markers, swapping values, and recursive invocation.
+3.3 Quick Sort Pseudocode
+   - This section will provide the pseudocode for implementing the quick sort algorithm, facilitating a concise representation of the procedure.
+   
+Chapter 4: Advantages and Disadvantages of Quick Sort
+4.1 Advantages of Quick Sort
+   - In this section, we will examine the advantages of quick sort, focusing on its speed and efficiency. We will also highlight the use of limited memory compared to other sorting algorithms like merge sort.
+4.2 Disadvantages of Quick Sort
+   - Here, we will discuss the potential disadvantages of quick sort, such as uneven divisions resulting in inefficient sorting, worst-case time complexity, and the possibility of stack overflow in large data sets.","[Front: Quick sort steps Back: Select a value to be pivot value. Used to compare values. Final position of pivot value is called split point which is used to divide the list for subsequent calls. Select a leftmark and right mark, beginning and end of remaining items in list. If the leftmark is less than pivot value, move leftmark pointer to the right till you find a leftmark value greater than pivot.If the rightmark pointer is greater than pivot value, move rightmark pointer to left till you find a rightmark value less than pivot.Exchange leftmark and rightmark values.Continue with leftmark rightmark moving process.Once leftmark and right mark have crossed, stop moving process.Swap pivot value for the place stopped (split point).LHS of split point is less and RHS is greater, list can be divided at split point and quick sort invoked recursively on 2 halves.],
+[Front: Quick sort psuedocode Back: ],
+[Front: Advantages of quick sort Back: Extremely fast. If partition always occurs in middle of the list there will be log n divisions in a list of length n, and each of the n items need to be checked against pivot value to find split point. O(n log n). Doesn't need additional memory.],
+[Front: Disadvantages of quick sort Back: If split points are not near the middle of the list, but close to start or end, division will be uneven. If split point is first item in a list, division results in a list of 0 items and a list of n-1 items. List of n-1 items divides into 0 items and n-2 items and so on. Resulting in time complexity O(n^2) If list is large and recursion takes too long, may cause stack overflow and program will crash.],
+[Front: Djikstra's shortest path algorithm overview Back: Find's the shortest path between one start node and all other nodes on a weighted graph. A type of breadth first search.]"
+"Chapter 5: Dijkstra's Shortest Path Algorithm
+5.1 Overview of Dijkstra's Shortest Path Algorithm
+   - This section will introduce Dijkstra's shortest path algorithm, explaining its purpose of finding the shortest path between a start node and all other nodes on a weighted graph.
+5.2 Applications of Dijkstra's Shortest Path Algorithm
+   - In this section, we will explore the practical applications of Dijkstra's algorithm, highlighting its usage in GPS navigation, IP routing, and telephone networking.
+   
+Chapter 6: Implementation of Dijkstra's Shortest Path Algorithm
+6.1 Ways to Implement Dijkstra's Algorithm
+   - This section will discuss different approaches to implement Dijkstra's algorithm, including the use of tables or arrays with queues and lists.
+6.2 Step-by-Step Procedure of Dijkstra's Algorithm
+   - Here, we will present a detailed step-by-step procedure for executing Dijkstra's algorithm, covering the calculation of temporary distances, selection of the shortest distance, and path output.
+6.3 Worked Example of Dijkstra's Algorithm
+   - In this section, we will provide a worked example of Dijkstra's algorithm, demonstrating its application in finding the shortest path between nodes in a graph using a table representation.
+
+Chapter 7: Comparison Between Dijkstra's and A* Algorithm
+7.1 Difference Between Dijkstra's and A*
+   - This section will highlight the principal difference between Dijkstra's and A* algorithms, focusing on the incorporation of heuristics in the latter for a more optimal pathfinding approach.
+7.2 Disadvantage to Dijkstra's Shortest Path Algorithm
+   - Here, we will discuss the limitation of Dijkstra's algorithm concerning its inability to handle edges with negative weight values.
+
+I will continue generating the remaining chapters in subsequent responses","[Front: Disadvantage to Djikstra's shortest path algorithm Back: Doesn't work for edges with a negative weight value.],
+[Front: Difference between Djikstra's and A* Back: A* uses heuristics while Djikstra's does not.],
+[Front: Applications of Djikstra's Back: Used for purpose to find the shortest path between 2 points e.g.: GPS navigationIP routingTelephone networking],
+[Front: Ways to implement Djikstra's Back: Using a table or array Queues and a series of lists],
+[Front: Djikstra's shortest path steps Back: Set temporary distances from start value for all nodes. 0 for start node and infinity for others.For each node in the graph:Find the node with the shortest distance from the start that hasn't been visited.For each connected node that hasn't been visited:calculate distance from startIf the distance from the start is lower than the currently recorded distance from the start:Set the shortest distance to the start of the connected node to the newly calculated distance.Set previous node to be current nodeMark the node as visited.Start from goal node.Add previous node to start of the listRepeat from step 5 until start node reachedOutput list 1 - 3 calculates shortest path 4 - 7 outputs the shortest path from start node to goal node],
+[Front: Worked example of Djikstra's using table Back: Find the node with shortest distance from start that hasn't been visited. Which is node A, has a distance of 0 from start node.  Now consider each connected node, not yet visited. B,C,D.  First consider B, calculate distance from start, so A's distance from start + the A to B edge weight: 0 +4 = 4.  Check if B's calculated distance from start is lower than current recorded distance from start: 4 < infinity so update B's distance from start to new distance and set previous node column to be the current node, A.  Now consider C and D. C: 0 +3 = 3. D: 0 + 2 = 2. Both < infinity so update C and D distnace and set previous node to A.  All A's connected nodes have been considered so A can be marked as visited.  Next consider the node with the shortest distance from start that hasn't been visited: D. Consider each node connected to D that hasn't been visited: C and F.  Calculate each nodes distance to start so D's distance from start + B to node's edge weight. C: 2 +1 = 3. This is not less than recorded distance from the start so no update required. F: 2+2 = 4. 4 < inifinity, so update F distance from start. All D connected nodes considered so marked as visited.   Next consider the node with the shortest distance from start that hasn't been visited: C. Consider each node connected to C that hasn't been visited yet. Both A and D have been visited already so, C can be marked as visited.  Next consider the node with the shortest distance from start that hasn't been visited: B or F. Consider B: Consider each node connected to B not visited yet: E. E distance from start: 4 + 4 = 8. 8 < infinity so update E distance from start. Update the previous node we've come from, B. B has had all of its connected nodes considered so mark as visited.  Node with shortest distance from start not yet visited: F. Consider each node connected to F not visited: G. G's distance from start : F's distance from start + F to G edge weight : 4 + 5 = 9. 9 < infinity so update G in table.  Done with F so it is marked as visited.   Node with shortest distance from start not visited: E. Each node connected to E not yet visited: G. G's distance from start: E's distance from start + E to G edge weight: 8 +2 = 10. 10 > 9 so not updated. Finished with E so mark it a visited.  Node with shortest distance from start not yet visited: G. Consider each node conncted to G not yet visited. None so G is marked as visited.  Outputting shortest path: Start with goal node and follow previous node back to start, inserting new node at front of the list. A to G: A → D → F → G.],
+[Front: Djikstra's algorithm implemented using a queue Back: Assign a temporary distance value to each node, 0 for starting node and infinity for other nodesAdd all edges to a priority queue, sorted by current distance (putting starting node at the from, rest in random order)While queue is not empty:Remove the node ,u, from front of queueFor each unvisited neighbour, w, of the current node u:newDistance = distanceAtU + distanceFromUtoWif newDistance < distanceAtW thendistanceAtW = newDistancechange position of w in priority queue to reflect new distance to wendifnext wend while],
+[Front: A* pathfinding algorithm overview Back: Findes the shortest path between 2 nodes on a weighted graph using heuristics. Best first search algorithm, performs better than Djikstra's algorithm because not every node is considered, instead only most optimal path is followed to the goal. A heuristic estimates the cost of the path between the next node and the goal and follows the path. Has 2 cost function - g(x) real cost from source to a given node. h(x) - approx cost from node x to goal node, heuristic funciton, adequete solution not always optimum. Hueristic funciton should never overstimate the cost, real cost should always be > or = to h(x). total cost of each node is calcuated as f(x) = g(x) + h(x)]"
+"Chapter Title: A* Pathfinding Algorithm
+
+Chapter Overview:
+This chapter provides an overview of the A* pathfinding algorithm and its various applications. The chapter begins by explaining the concept of admissible heuristics and how they can be used to estimate distances in different scenarios. Next, a worked example of the A* algorithm is presented, demonstrating its step-by-step implementation. The chapter then explores different ways to implement the A* algorithm, including the use of arrays, lists, and dictionaries. Finally, the chapter discusses the measures of an algorithm's complexity, focusing on time and space complexity.
+
+Chapter Content:
+1. Introduction to A* Pathfinding Algorithm
+   - Definition and purpose
+   - Applications of A* in video games, network packet routing, financial modeling, puzzles, and social networking analysis
+
+2. Admissible Heuristics
+   - Explanation of heuristic estimates
+   - Examples of admissible heuristics using distance calculations in maps and mazes
+
+3. Step-by-Step Worked Example
+   - Initialization of node values
+   - Iterative exploration of nodes
+   - Updating node values based on distance and heuristic estimates
+   - Finding the shortest path from the start node to the goal node
+
+4. Implementing the A* Algorithm
+   - Using arrays, lists, and dictionaries
+   - Managing visited and unvisited nodes
+   - Utilizing priority queues for efficient processing
+
+5. Measures of Algorithm Complexity
+   - Time complexity and its relation to algorithm performance
+   - Space complexity and minimizing memory usage
+   - Analyzing the efficiency of A* algorithm","[Front: Applications of A* pathfinding algorithm Back: Used in video games - moving NPCs appearing to move intelligentlyNetwork packet routingFinancial modelling for trading assets and goodsSolving puzzles like word laddersSocial networking analysis - calculating degrees of seperation between individuals to suggest friends],
+[Front: Admissible Heuristics Back: Sensible heurstic estimates calculated from additional data. e.g. Nodes represent towns, edges represent distances in km, Longitude and Latitude of each node to calculate straight line distance from any node to destination -  gives an admissible heuristic estimate. e.g. Nodes in a 2D maze, using OOP, each node can have its own set of coordinates and horizontal + vertical distance between nodes ignoring obstables can be used as heuristics. Or could calculate Pthag to find euclidean distance.],
+[Front: Worked example of A* pathfinding algorithm Back: Starting with node A, set g = 0 and f = 34. Other g's of other nodes have been set to infinity. Start with A, consider each connected node, not yet visited: C and D. Considering C: calcuate shortest distance from start (g): A's distance from start to A-C edge value: 0 + 10, then f value : 10 + 22 =32, 32 < infinity so update table and set previous node to A.  Consider other node, D: D's g value is A's distance from start + A-D edge weight: 0 +4 = 4, F value = 4 + 27 = 31 < infinity so update table and set previous node to A. All of A's connected node's have been considered so A has now been visited.  Now consider next unvisited node with lowest f value: D. D's connected nodes: E, E's g is = D's distance from start + D-E edge weight: 4+1 = 5, E f value: 5 + 24 = 29 < inifinity so update E in table and set previos node to D. Now all of D's connected nodes have been considered, so set it to visited.  Now consider next unvisited node with lowest f value: E. E's connected nodes not visited: C,G,H,J. Calculate g and f values and update table if f value is lower. C: g = 5+4 = 9 f = 9+22 = 31 f value is lower so update table. G: g = 5+4 = 9 f = 9+27 = 36 f value is lower so update table. H: g = 5+6 = 11 f = 11+13 = 24 f value is lower so update table. J: g = 5+7 = 12 f = 12+16 = 28 f value is lower so update table. All of E's connected nodes have been considered so it has now been visited.  Now consider next unvisited node with lowest f value: H. Consider each unvisited node connected to H: I,M. I: g = 11 + 9 = 20, f = 20 + 9 = 29. f value is lower so update table. M: g = 11+6 = 17, g = 17+5=22. f value is lower so update table. All of H's connected nodes have been considered so now it is visited. Now consider next unvisited node with lowest f value: M. Consider each unvisited node connected to M: L. L:  g = 17+4=21, f = 21+0=21 f value is lower so update table. All of M's connected node have been considered so update table.  A route to L has been found: A → D → E → H → M → L, possible more optimal route from I to L. We need to follow the algorithm through until the goal node has been visited. Now consider next unvisited node with lowest f value: L.  Consider each unvisted node connected to L: I. I: g = 21+5=26, f=26+29 =55, higher than the currently stored f value (29) so don't update table. L has now been visited so set it to visited. Now found the goal node, considered all adjacent nodes. Once goal node is visited, there are no shorter paths to discover.  A → D → E → H → M → L],
+[Front: A* pathfinding algorithm in steps Back: Set initial g and f value for all nodes in the graph. (0 or start node and infinity for all other nodes)While goal not visited:Find the node with lowest f value not yet visitedFor each connected node that has not been visted:Caculate distance from start by adding edge value and heuristicIf distance from start + heuristic < than current f value:Set f value of connected node to the newly calculated distance.Set the previous node to be current node.Set current node as visited.Start from goal node.Add the previous node to the start of the list.Repeat from step 3 until start node is reached.Output list. Steps 1 and 2 calculates the shortest path. Steps 3-6 outputs the shortest path.],
+[Front: Ways to implement A* pathfinding algorithm Back: For worked examples in real life, can use a single table / array. Implementing as an array, wouldn't be able to mix string and integer data types easily without lots of unnecessary casting. Could use 2 lists or dictionariesOne for containing all unvisited nodesOne for containing all visited nodesAdd each node to a priority queue when its first discovered, once it has left it is then classed as visited.],
+[Front: Measures of an algorithm's complexity Back: Time complexitySpace complexity Algorithms should aim to run as quick as possible and take up the least amout of space possible.]"
+"Chapter Title: Big O Notation and Algorithm Scalability
+
+Chapter Overview:
+This chapter focuses on understanding Big O notation and how it expresses the scalability of algorithms. The chapter introduces the concept of Big O and its relevance to measuring time complexity. It explores the different categories of Big O, including constant, logarithmic, linear, polynomial, and exponential time. With each category, examples and explanations are provided to understand the growth rate of algorithms. The chapter also touches on multiple function algorithm scenarios and explains how to determine the worst time complexity for the entire algorithm.
+
+Chapter Content:
+1. Introduction to Big O Notation
+   - Definition and purpose of Big O notation
+   - Importance of measuring algorithm scalability
+
+2. Big O Notation Categories
+   - O(1) - Constant time
+   - O(log n) - Logarithmic time
+   - O(n) - Linear time
+   - O(n^2) - Polynomial time
+   - O(2^n) - Exponential time
+
+3. O(1) - Constant Time Complexity
+   - Algorithms with consistent execution time
+   - Examples: len(list), accessing list elements by index
+
+4. O(log n) - Logarithmic Time Complexity
+   - Algorithms with slowly growing execution time
+   - Examples: Binary search
+
+5. O(n) - Linear Time Complexity
+   - Algorithms with execution time proportional to data set size
+   - Examples: Linear search, single for loops, and while loops
+
+6. O(n^2) - Polynomial Time Complexity
+   - Algorithms with execution time proportional to the square of data set size
+   - Examples: Nested for loops, bubble sort, and insertion sort
+
+7. O(2^n) - Exponential Time Complexity
+   - Algorithms with execution time doubling with each data set item added
+   - Examples: Recursive algorithms
+
+8. Multiple Function Algorithm Scenarios
+   - Determining the worst time complexity for the entire algorithm
+   - Consideration of the function with the highest time complexity","[Front: Big O notation Back: Used to express the scalability of an algorithm as its order. Expresses the time complexity, or performace of an algorithm. Considers worst case scenario, assumes that every possible element is touched on as the algorithm executes.],
+[Front: Big O notation categories Back: O(1) - Constant timeO(log n) Logarithmic timeO(n) - Linear timeO(n^2) - Polynomial timeO(2^n) - Exponential time],
+[Front: O(1) - Constant time Back: An algorithm that takes the same amount of them to execute regardless of the size of the input data set.  e.g. len(list) will take the same amount of them to execute no matter the number of items in the list.],
+[Front: O(log n) Logarithmic time Back: An algorithm's time take to complete will grow very slowly as data set size increases.  e.g. Binary search is log base 2 n, doubling size of data set has very little effect on the time the algorithm takes to complete.]"
+"Chapter Title: Understanding Algorithm Complexity
+
+Chapter Overview:
+This chapter focuses on algorithm complexity and its impact on performance. It explains the concept of time complexity and how it relates to the size of the input data set. The chapter explores different categories of time complexity, including linear, polynomial, and exponential. It provides examples and explanations of algorithms with each complexity category and discusses their efficiency with increasing data set sizes. The chapter also emphasizes the significance of analyzing the time and space complexity of algorithms to optimize their performance.
+
+Chapter Content:
+1. Introduction to Algorithm Complexity
+   - Definition of algorithm complexity
+   - Importance of analyzing time complexity
+
+2. O(n) - Linear Time Complexity
+   - Explanation of linear complexity
+   - Examples: Linear search, single for loops, and while loops
+
+3. O(n^2) - Polynomial Time Complexity
+   - Understanding polynomial complexity
+   - Examples: Nested for loops, bubble sort, and insertion sort
+
+4. O(2^n) - Exponential Time Complexity
+   - Exploring exponential complexity
+   - Examples: Recursive algorithms
+
+5. O(1) - Constant Time Complexity Example
+   - An algorithm with consistent execution time
+   - Example: len(list) - returning the length of the list
+
+6. O(log n) - Logarithmic Time Complexity Example
+   - An algorithm with slowly growing execution time
+   - Example: Binary search
+
+7. Multiple Function Algorithm Scenarios
+   - Determining the worst time complexity for the entire algorithm
+   - Considering the function with the highest time complexity
+
+8. Analyzing Algorithm Efficiency
+   - Significance of time and space complexity analysis
+   - Optimizing algorithm performance
+
+Please note that these textbook chapters are summarized based on the given flashcards. Additional research and content development may be required for a comprehensive textbook","[Front: O(n) - Linear time Back: An algorithm with the time to complete it grows in direct proportion to the data set size.  Performance declines as data set grows. Reduces efficiency with increasingly large data sets. e.g. Linear search list of 1000 items will take 1000 times longer than searching a list of 1 item.],
+[Front: O(n^2) - Polynomial time Back: An algorithm where performance is directly proportional to the square of the data set size.  Significantly reduces efficiency with increasingly large data sets.  e.g. nested loops, e.g. of 3 nests = n^3, 4 nests = n^4.],
+[Front: O(2^n) - Exponential time Back: An algorithm where time taken to execute doubles with every item added to the data set. Execution time growns exponentially.],
+[Front: O(1) - Constant time example Back: len(list), returning the length of the list in the same time regardless of the number of items in it. print(list[0]) printing the first item of a list, will take the same time regardless of the number of items in the list.],
+[Front: O(log n) - Logarithmic time example Back: Binary search algorithm With each pass, it halves the size of the input data set.],
+[Front: O(n) - linear complexity example Back: Single for loops and while loops  Linear search],
+[Front: O(n^2) - Polynomial time example Back: Nested for loops e.g. bubble sort and insertion sort],
+[Front: O(2^n) - Exponential time example Back: Time doubles with each additional item in input data set. Recursive algorithms.],
+[Front: Multiple function algorithm scenarios Back: Take the function that has the worst time complexity for the entire algorithm. This is because as data set grows, rest of the algorithm functions which has lower complexity becomes insignificant.]"

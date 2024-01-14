@@ -1,3 +1,4 @@
+### cleaned -> generated notes
 from openai import OpenAI
 from dotenv import load_dotenv
 import csv
@@ -14,7 +15,7 @@ notesOrTextbook = randint(0, 1)
 subprompt1 = 'written notes' if notesOrTextbook else 'textbook chapters'
 subprompt2 = 'student' if notesOrTextbook else 'professor'
 
-input_file = 'algo_anki_cleaned.csv' # TODO: input arg
+input_file = 'data_structures_anki.csv' # TODO: input arg
 input_file_path = './cleaned/algo_anki_cleaned.csv'
 dotInd = input_file.find('_cleaned')
 output_file_path = './generated/' + input_file[:dotInd] + '_generated_' + subprompt1.split(' ')[0] + '_' + subprompt1.split(' ')[1] + '.csv'
@@ -66,8 +67,8 @@ with open(input_file_path, mode = 'r', newline='') as infile, \
     )
     response = response.choices[0].message.content
     
-    
-    ### write output file
+    # TODO: Split below into separate file for further post-generation processing
+    ### write output file 
     notes = []
     for i in range(1,NUM_DATASETS+1):
       startWord = f'Set {i}:'
