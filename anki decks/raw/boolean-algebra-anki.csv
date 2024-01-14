@@ -1,0 +1,59 @@
+#separator:tab
+#html:false
+Why is binary used?	Easy to build electronic circuits with just 2 states.  Easier to store data as well. RAM : Voltage or no voltage Hard disk: North or south pole Optical: Pits and lands.
+Boolean basics	A statement is Boolean when it is either true or false. Boolean logic and logic gates are used to build computer circuitry. Boolean logic an input is either 1 or 0. Inputs are assigned letters to represent them such as A, B or C. Output will always 0 or 1. Special symbols are used to make expressions easier to write.
+NOT Gate	Negation. Reverses the input. If A is 0, output will be 1. If A is 1, output will be 0.  Ā
+AND Gate	Conjunction. If A and B are 1, the output is 1, else output is 0.  AB.
+OR Gate	Disjunction If either A or B is 1, then the output will be 1, else output is 0.  A+B
+XOR Gate	Exclusive OR Gate Only one input can be 1 else the output is 0. If A = 1 and B = 1, output is 0. A = 1 B = 0 output is 1. A=0 B = 0 is 0.  A⊕B
+Boolean Expression	Describe electric circuits in computer systems and selection statements in programming. Logic gates used to illustrate thse electric circuits.
+Benefit to using less boolean expressions.	Reduces size of circuit Reduces manufacturing cost of circuits Reduces power consumption Executes instructions as quickly as possible by reducing the need to fetch variables from memory.
+Karnaugh Maps	Method of simplifying Boolean expressions. Provide an alternative way of simplifying Boolean expressions which is often easier than using Boolean algebra for those involving up to 3 or 4 variables. Similar to truth tables and allow us to easily detect groupings of expressions with common factors.
+Karnaugh Map group identification general rules	Group size should be in powers of 2. Should be as large as possible. Groups can roll around the table. Groups can overlap. For double input it goes: 00 , 01, 11, 10. Only really fill in parts where expression is True with 1. For simplifying you look at where the input does not change where outputs are true. When writing final expression, groups are seperated by ORs.
+Two input karnaugh maps example: A+B	
+Two input karnaugh maps example: A+NOTB	
+3 Input Karnaugh maps	Used to illustrate an expression with variables. Two inputs paired together as a row header, doesn't matter which 2 together.
+3 input variable karnaugh maps example:	First seperate expressions using OR symbols:  First look at NOTC AND B where expression = 1 Giving:  Next where AB = 1.  Next where C = 1  Next draw boxes.  Next take each box, take each variable, if the digit for the variable stays the same, if it changes discard it.  Here A changes, B stays the same, C changes. B is kept. Next box:  Only C stays the same so keep C. Final expresion is B+C.
+4 input Karnaugh maps	Used to simpligy 4 variable inputs.
+4 input Karnaugh map example	
+Summary of Karnaugh maps method	Construct Karnaugh map step by step, placing 1s in the squares for each sub expression separated by an OR symbolMake groups as large as possibleForm final expression that combines all simplified expressions of groups seperated by OR.
+X0 =	0
+X1 =	X
+XX =	X
+XNOTX =	0
+X + 0 =	X
+X + 1 =	1
+X + X =	X
+X + NOT X =	1
+General Rules	
+XY =	YX
+X+Y =	Y+X
+Commutative rule	
+X(YZ) =	(XY)Z
+X+(Y+Z) =	(X+Y)+Z
+Associative rules	
+X(Y+Z) =	(XY) + (XZ)
+(XY)(WZ) =	(XW)+(XZ)+(YW)+(YZ)
+Distributive rules	
+X+(XY) =	x
+X(X+Y) =	Y
+Absorption rules	
+Double negation	NOTNOT X = X
+Uses of de Morgan's law	Any Boolean function can be converted to one which uses only NAND or only NOR functions, can be further converted to an expression using all NAND / NOR functions. Meaning any integrated circuite can be built from just one type of logic gate reducing manufacturing costs.
+de Morgan's second law	NOT(AB)  = NOT A + NOT B
+de Morgan's first law	NOT(A+B) = NOT(AB)
+Boolean Alegbra simplification example 1	
+Boolean Algebra simplification example 2	
+Boolean Algebra simplification example 3	Rule 8 is Z + NOTZ = 1
+Binary airthmetic using gates	Right combinations of logic gates can be used to output the resilt of a binary addition or subtraction including the value of any carry bit as a second input.
+Half adder	Cant take an input of 2 bits ang give a 2 bit output as a correct result of an addition of 2 inputs.  S represents sum and C represents the carry bit. Only has 2 inputs so cannot use the carry from a previous addition as a third input to a following addition in order to add n-bit numbers.
+Full adders	Combines 2 half adders to add 3 bits together including inputs A and B, and a carry in bit C. An additional OR gate is used to output the carry out bit.
+Combining full adders	N number of full adders can be connected together capable of adding a binary number of n bits. A full adder can input the carry bit into a subsequent adder along with 2 brand new inputs. Allows for multi bit binary addition known as ripple carry adder. Represents the basics of logic taking palce in the ALU of a processor.
+Multibit binary addition abstraction	
+D type flip flop	Elemental sequential logic circuit that can store one bit and flip between 2 states, 0 and 1.  Has 2 inputs, control single bit data input (D) and clock sigal (C). Has 2 outputs, single bit data output (Q) , inverse of data output (NOTQ). Made of NAND gates.
+Clock used in d type flip flops	Clock / oscillator another type of sequential circuits that changes state at timed intervals or pulses. Computer's internal clock synchronises the state changes facilitated by flip flop circuits.
+Positive edge triggered	D type flip flop is a positive edge triggered flip flop meaning that it can only change the output value from 1 to 0 or vice versa when the clock is at the rising or positve edge, ie beginning of a clock period. When the clock is not at a positive edge, the input value does not change.
+Why are d type flip flops important?	Flip flop circuit is important because it can be used as a memory cell to store the state of a bit.
+D type flip flop abstracted diagram	
+How do d type flip flops maintain values	When the clock signal is not at a rising edge (1) the output Q is held and not changed.  Clock pulses at regular intervals. There is a shift delay between 1 and 0. In D type flip flop circuits only recieve a high 1 signal at the rising edge so the moment signal changes to high / 1. D type circuit perceives its inputs more accurately from the clock changing states. Output Q only takes on a new value if the value at D has changed at the point of a clock pulse. Means that the clock pulse will freeze of store the input value at D until next clock pulse. If D remains the same of the next clock pulse, flip flip will hold the same value.
+Uses of D type flip flops as memory units	D type flip flop can be used as 1 bit memory. To store 1 byte, 8 flip flops needed. Register memories are constructed by connecting a series of flip flops in a row and are typically used for intermediate storage needed during airthmetic operations. Static RAM also uses d type flip flops.

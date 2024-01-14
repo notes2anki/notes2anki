@@ -13,7 +13,8 @@ input_file_path = args.input_file
 output_file_path = args.output_file
 if output_file_path == '':
   dotInd = input_file_path.find('.')
-  output_file_path = input_file_path[:dotInd] + '_processed.csv'
+  output_file_path = './cleaned/' + input_file_path[:dotInd] + '_cleaned.csv'
+input_file_path = './raw/' + args.input_file
 
 
 # Open the input file in read mode and output file in write mode
