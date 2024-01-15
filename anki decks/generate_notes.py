@@ -15,10 +15,10 @@ notesOrTextbook = randint(0, 1)
 subprompt1 = 'written notes' if notesOrTextbook else 'textbook chapters'
 subprompt2 = 'student' if notesOrTextbook else 'professor'
 
-input_file = 'data_structures_anki.csv' # TODO: input arg
-input_file_path = './cleaned/algo_anki_cleaned.csv'
+input_file = 'huge_computer_science_anki_cleaned.csv' # TODO: input arg
+input_file_path = './cleaned/' + input_file
 dotInd = input_file.find('_cleaned')
-output_file_path = './generated/' + input_file[:dotInd] + '_generated_' + subprompt1.split(' ')[0] + '_' + subprompt1.split(' ')[1] + '.csv'
+output_file_path = './generated notes/' + input_file[:dotInd] + '_generated_' + subprompt1.split(' ')[0] + '_' + subprompt1.split(' ')[1] + '.csv'
 with open(input_file_path, mode = 'r', newline='') as infile, \
   open(output_file_path, mode='w', newline='') as outfile:
   reader = csv.reader(infile)
